@@ -30,7 +30,7 @@ Une approche HDA (Hypermedia Driven Application) du développement web.
 
 - Qu'est-ce que HTMX ?
 - Une petite HDA réalisée avec HTMX, FastAPI et Chameleon
-- UneHDA versus SPA
+- HDA versus SPA
 
 ---
 
@@ -65,7 +65,24 @@ By removing these constraints, htmx completes HTML as a hypertext
 
 ---
 
-# Exemple
+# Exemples HTMX
+
+### Delete button
+```html
+<button hx-trigger="click" hx-delete="/contacts/27" hx-target="#message">Delete</button>
+<div id="message" />
+```
+### Mouseenter event
+```html
+<div hx-trigger="mouseenter" hx-get="/contacts/27" hx-target="#contacts" hx-swap="beforeend">
+  Append contact 27
+</div>
+<div id="contacts"><h3>Liste des contacts</h3></div>
+```
+
+---
+
+# Une petite application
 
 Une petite application CRUD réalisée avec HTMX, FastAPI et Chameleon.
 
@@ -124,7 +141,7 @@ Une petite application CRUD réalisée avec HTMX, FastAPI et Chameleon.
 
 <!-- _class: fs-small -->
 
-# A Complexity Budget
+# Food for thought
 
 Any software project has a complexity budget, explicit or not: there is only so much complexity a given development team can tolerate and every new feature and implementation choice adds at least a bit more to the overall complexity of the system.
 

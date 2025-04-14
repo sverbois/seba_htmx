@@ -1,0 +1,46 @@
+<metal:macro use-macro="load: templates/main.pt">
+    <metal:slot fill-slot="content">
+        <form id="search-contact-form" class="row row-cols-md-auto g-3 align-items-center m-3">
+            <div class="col-12">
+                <label class="form-label" for="q">Critère de recherche</label>
+            </div>
+            <div class="col-12">
+                <input type="search" class="form-control" id="q" name="q" hx-trigger="input changed" hx-get="/contacts" hx-target="#contact-rows" />
+            </div>
+            <div class="col-12">
+                <button class="btn btn-secondary" type="reset" hx-trigger="click" hx-get="/contacts" hx-target="#contact-rows" hx-on--after-request="document.getElementById('q').value = ''">
+            Effacer
+                </button>
+            </div>
+        </form>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>Email</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="contact-rows" hx-trigger="load" hx-get="/contacts" hx-target="this"></tbody>
+            <tbody class="">
+                <form id="add-contact-form" hx-trigger="submit" hx-post="/contacts" hx-target="previous tbody" hx-swap="beforeend" hx-on--after-request="document.getElementById('add-contact-form').reset()">
+                    <tr>
+                        <td>
+                            <input type="text" class="form-control" id="firstname" name="firstname" required="required" />
+                        </td>
+                        <td>
+                            <input type="text" class="form-control" id="lastname" name="lastname" required="required" />
+                        </td>
+                        <td>
+                            <input type="email" class="form-control" id="email" name="email" required="required" />
+                        </td>
+                        <td>
+                            <button class="btn btn-primary">Ajouter</button>
+                        </td>
+                    </tr>
+                </form>
+            </tbody>
+        </table>
+    </metal:slot>
+</metal:macro>

@@ -1,0 +1,7 @@
+<metal:macro use-macro="load: templates/main.pt">
+    <metal:slot fill-slot="content">
+        <p>
+            Accéder aux <a href="/pages/contacts">contacts</a>
+        </p>
+    </metal:slot>
+</metal:macro>

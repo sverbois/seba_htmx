@@ -1,0 +1,5 @@
+<tbody tal:omit-tag="" tal:define="row_macro load: contacts/row.pt">
+    <tal:repeat repeat="contact contacts">
+        <metal:block use-macro="row_macro" />
+    </tal:repeat>
+</tbody>

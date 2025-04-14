@@ -1,0 +1,6 @@
+-c constraints.txt
+
+fastapi
+fastapi_chameleon
+python-multipart
+uvicorn

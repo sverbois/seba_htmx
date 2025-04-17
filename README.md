@@ -82,13 +82,24 @@ By removing these constraints, htmx completes HTML as a hypertext
 
 ---
 
-# Une petite application
+# Une petite application (1/2)
 
 Une petite application CRUD réalisée avec HTMX, FastAPI et Chameleon.
 
 - HTMX : <https://htmx.org/>
 - FastAPI : <https://fastapi.tiangolo.com/>
 - Chameleon : <https://pypi.org/project/fastapi_chameleon/> et <https://chameleon.readthedocs.io>
+
+---
+
+# Une petite application (2/2)
+
+- Home page : FastAPI endpoint and Chameleon template
+- Contacts page structure (Firefox inspector)
+- Delete contact button
+- Add contact form
+- Search form : search input and reset button
+- Asynchronous loading of the contact section
 
 ---
 

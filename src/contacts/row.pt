@@ -6,6 +6,6 @@
         <?python
             contact_url =  "/contacts/" + contact['id']
         ?>
-        <button hx-trigger="click" hx-delete="${contact_url}" hx-target="closest .contact" hx-confirm="Are you sure you want to delete this contact?" class="btn btn-danger">Supprimer</button>
+        <button hx-trigger="click" hx-delete="${contact_url}" hx-target="closest .contact" hx-swap="outerHTML" hx-confirm="Are you sure you want to delete this contact?" class="btn btn-danger">Supprimer</button>
     </td>
 </tr>
